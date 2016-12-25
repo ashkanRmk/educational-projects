@@ -1,4 +1,5 @@
-# Educational_Project course in Sadjad University of Higher Technology
+# Educational_Projects of courses
+#in Sadjad University of Higher Technology
 
 ##*Final and Mid-term Projects* of Advanced Programming
 
