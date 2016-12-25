@@ -1,0 +1,16 @@
+﻿total 0
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 ashkan
+
+drwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 rahmani
+
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 ahmad
+
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 xaniar
+
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 samane
+
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 book
+
+-rwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 zaz
+
+drwxrw-r-- 1 ahmad ahmad 0 دسامب 20 15:34 jam
