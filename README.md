@@ -1,6 +1,6 @@
 # Educational Projects of courses in Sadjad University of Higher Technology
 
-##*Final and Mid-term Projects* of Advanced Programming
+##*Final and Mid-term Projects* of Advanced Programming.
 
 ######*Store Managment System*
 ######*Student Management System*
