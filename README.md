@@ -1,11 +1,14 @@
-# Educational_Project
+# Educational_Project course in Sadjad University of Higher Technology
 
-######Final term Project of Data Structure.
+##*Final and Mid-term Projects* of Advanced Programming
 
-##*Family Tree*
+######*Store Managment System*
+######*Student Management System*
 ----------------------------------------
-######*Final and Mid-term Projects* of Advanced Programming course in Sadjad University of Higher Technology.
+##*Final term* Project of Data Structure.
 
-##*Store Managment System*
-##*Student Management System*
+######*Family Tree*
 ----------------------------------------
+##The OS Lab *Final term* Project that make new command in linux Shell.
+
+######*Custom_Shell_Command*
