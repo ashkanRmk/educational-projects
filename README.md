@@ -10,6 +10,6 @@
 ######*Family Tree*
 ######*Paragraph Words Counter*
 ----------------------------------------
-##The OS Lab *Final term* Project that make new command in linux Shell.
+##The OS Lab *Final term* Project.
 
 ######*Custom_Shell_Command*
