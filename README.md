@@ -1,4 +1,4 @@
-# Educational Projects of courses in Sadjad University of Higher Technology
+# Educational Projects of Sadjad University of Higher Technology Courses
 
 ##*Advanced Programming*
 
