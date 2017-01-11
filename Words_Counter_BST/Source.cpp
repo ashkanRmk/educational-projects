@@ -13,11 +13,20 @@ struct Node {
 	int count;
 	Node *left;
 	Node *right;
+	Node *left_c;
+	Node *right_c;
+
+	bool left_thread;
+	bool right_thread;
 
 	Node(string val) {
 		value = val;
 		left = NULL;
 		right = NULL;
+		left_c = NULL;
+		right_c = NULL;
+		left_thread = false;
+		right_thread = false;
 		count = 1;
 	}
 
@@ -25,12 +34,16 @@ struct Node {
 		value = val;
 		left = NULL;
 		right = NULL;
+		left_c = NULL;
+		right_c = NULL;
+		left_thread = false;
+		right_thread = false;
 		count = counts;
 	}
 };
 
-vector<string> name_list;
-vector<int> count_list;
+//vector<string> name_list;
+//vector<int> count_list;
 void menu();
 
 class BST
@@ -38,6 +51,8 @@ class BST
 private:
 
 	Node *root;
+
+	friend class Threaded_inOrder_itr;
 
 	void addHelper(Node *root, string val) {
 		transform(val.begin(), val.end(), val.begin(), ::tolower);
@@ -61,19 +76,19 @@ private:
 
 	void add_by_counthelper(Node *root, int con, string val) {
 		if (root->count < con) {
-			if (!root->left) {
-				root->left = new Node(val, con);
+			if (!root->left_c) {
+				root->left_c = new Node(val, con);
 			}
 			else {
-				add_by_counthelper(root->left, con, val);
+				add_by_counthelper(root->left_c, con, val);
 			}
 		}
 		else {
-			if (!root->right) {
-				root->right = new Node(val, con);
+			if (!root->right_c) {
+				root->right_c = new Node(val, con);
 			}
 			else {
-				add_by_counthelper(root->right, con, val);
+				add_by_counthelper(root->right_c, con, val);
 			}
 		}
 	}
@@ -167,13 +182,14 @@ private:
 		}
 	}
 
-	void print_inOrder(Node *root)
+	void print_inOrder(Node *root, ostream &output)
 	{
 		if (root != NULL)
 		{
-			print_inOrder(root->left);
+			print_inOrder(root->left, output);
 			cout << "\t" << root->value << " / " << root->count << endl << endl;
-			print_inOrder(root->right);
+			output << "\t" << root->value << " / " << root->count << endl << endl;
+			print_inOrder(root->right, output);
 		}
 		else
 		{
@@ -181,21 +197,36 @@ private:
 		}
 	}
 
-	void push_to_vector(Node *root)
+	void print_inOrder_c_child(Node *root, ostream &output)
 	{
 		if (root != NULL)
 		{
-			name_list.push_back(root->value);
-			count_list.push_back(root->count);
-
-			push_to_vector(root->left);
-			push_to_vector(root->right);
+			print_inOrder_c_child(root->left_c, output);
+			cout << "\t" << root->value << " / " << root->count << endl << endl;
+			output << "\t" << root->value << " / " << root->count << endl << endl;
+			print_inOrder_c_child(root->right_c, output);
 		}
 		else
 		{
 			return;
 		}
 	}
+
+	//void push_to_vector(Node *root)
+	//{
+	//	if (root != NULL)
+	//	{
+	//		name_list.push_back(root->value);
+	//		count_list.push_back(root->count);
+
+	//		push_to_vector(root->left);
+	//		push_to_vector(root->right);
+	//	}
+	//	else
+	//	{
+	//		return;
+	//	}
+	//}
 
 	void save_helper(Node *root, ostream &output)
 	{
@@ -211,11 +242,233 @@ private:
 		}
 	}
 
+	void iterate_inOrder(Node *root)
+	{
+		if (root != NULL)
+		{
+			iterate_inOrder(root->left);
+			cout << "\t" << root->value << " / " << root->count << endl << endl;
+			add_by_count(root->value, root->count);
+			iterate_inOrder(root->right);
+		}
+		else
+		{
+			return;
+		}
+	}
+
 public:
+
+	//BST()
+	//{
+	//	root = new Node("");
+	//	root->right = root->left = root;
+	//	root->left_thread = true;
+	//}
+
+
+	///////Threded BST Functions
+
+	void insert_threded(string key)
+	{
+		Node *p = root;
+		transform(key.begin(), key.end(), key.begin(), ::tolower);
+
+		for (;;)
+		{
+			if (p->value.compare(key) < 0)
+			{
+				if (p->right_thread)
+					break;
+				p = p->right;
+			}
+			else if (p->value.compare(key) >= 0)
+			{
+				if (p->left_thread)
+					break;
+				p = p->left;
+			}
+			else
+			{
+				return;
+			}
+		}
+		Node *tmp = new Node(key);
+		tmp->right_thread = tmp->left_thread = true;
+		if (p->value.compare(key) < 0)
+		{
+			/* insert to right side */
+			tmp->right = p->right;
+			tmp->left = p;
+			p->right = tmp;
+			p->right_thread = false;
+		}
+		else
+		{
+			tmp->right = p;
+			tmp->left = p->left;
+			p->left = tmp;
+			p->left_thread = false;
+		}
+	}
+
+	bool search_threded(string key)
+	{
+		Node *tmp = root->left;
+		for (;;)
+		{
+			if (tmp->value.compare(key) < 0)
+			{
+				if (tmp->right_thread)
+					return false;
+				tmp = tmp->right;
+			}
+			else if (tmp->value.compare(key) >= 0)
+			{
+				if (tmp->left_thread)
+					return false;
+				tmp = tmp->left;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	}
+
+	void Delete_threded(string key)
+	{
+		Node *dest = root->left, *p = root;
+		for (;;)
+		{
+			if (dest->value.compare(key) < 0)
+			{
+				/* not found */
+				if (dest->right_thread)
+					return;
+				p = dest;
+				dest = dest->right;
+			}
+			else if (dest->value.compare(key) >= 0)
+			{
+				/* not found */
+				if (dest->left_thread)
+					return;
+				p = dest;
+				dest = dest->left;
+			}
+			else
+			{
+				/* found */
+				break;
+			}
+		}
+		Node *target = dest;
+		if (!dest->right_thread && !dest->left_thread)
+		{
+			/* dest has two children*/
+			p = dest;
+			/* find largest node at left child */
+			target = dest->left;
+			while (!target->right_thread)
+			{
+				p = target;
+				target = target->right;
+			}
+
+			dest->value = target->value;
+		}
+
+		if (p->value.compare(target->value) >= 0)
+		{
+			if (target->right_thread && target->left_thread)
+			{
+				p->left = target->left;
+				p->left_thread = true;
+			}
+			else if (target->right_thread)
+			{
+				Node *largest = target->left;
+				while (!largest->right_thread)
+				{
+					largest = largest->right;
+				}
+				largest->right = p;
+				p->left = target->left;
+			}
+			else
+			{
+				Node *smallest = target->right;
+				while (!smallest->left_thread)
+				{
+					smallest = smallest->left;
+				}
+				smallest->left = target->left;
+				p->left = target->right;
+			}
+		}
+		else
+		{
+			if (target->right_thread && target->left_thread)
+			{
+				p->right = target->right;
+				p->right_thread = true;
+			}
+			else if (target->right_thread)
+			{
+				Node *largest = target->left;
+				while (!largest->right_thread)
+				{
+					largest = largest->right;
+				}
+				largest->right = target->right;
+				p->right = target->left;
+			}
+			else
+			{
+				Node *smallest = target->right;
+				while (!smallest->left_thread)
+				{
+					smallest = smallest->left;
+				}
+				smallest->left = p;
+				p->right = target->right;
+			}
+		}
+	}
+
+	void printTree_threded()
+	{
+		Node *tmp = root, *p;
+		for (;;)
+		{
+			p = tmp;
+			tmp = tmp->right;
+			if (!p->right_thread)
+			{
+				while (!tmp->left_thread)
+				{
+					tmp = tmp->left;
+				}
+			}
+			if (tmp == root)
+				break;
+			cout << tmp->value << " / " << tmp->count << endl;
+		}
+		cout << endl;
+	}
+
+
+	////////////Normal BST Functions
+
+	void iterate()
+	{
+		iterate_inOrder(root);
+	}
 
 	void add(string val) {
 		if (root) {
-			this->addHelper(root, val);
+			addHelper(root, val);
 		}
 		else {
 			root = new Node(val);
@@ -224,7 +477,7 @@ public:
 
 	void add_by_count(string val, int count) {
 		if (root) {
-			this->add_by_counthelper(root, count, val);
+			add_by_counthelper(root, count, val);
 		}
 		else {
 			root = new Node(val, count);
@@ -234,7 +487,7 @@ public:
 	void add_FILE(string val, int count)
 	{
 		if (root) {
-			this->add_asFile_helper(root, count, val);
+			add_asFile_helper(root, count, val);
 		}
 		else {
 			root = new Node(val, count);
@@ -242,7 +495,7 @@ public:
 	}
 
 	void print() {
-		printHelper(this->root);
+		printHelper(root);
 	}
 
 	int nodesCount() {
@@ -250,7 +503,7 @@ public:
 	}
 
 	bool deleteValue(string value) {
-		return this->deleteValueHelper(NULL, this->root, value);
+		return deleteValueHelper(NULL, root, value);
 	}
 
 	void display_in_FILE()
@@ -266,17 +519,24 @@ public:
 		display_in_FILE_helper(root, 0, output);
 	}
 
-	void print_name()
+	void print_name(ostream &output)
 	{
-		print_inOrder(root);
+
+		print_inOrder(root, output);
 	}
 
-	void push_vector()
+	void print_count(ostream &output)
 	{
-		name_list.clear();
-		count_list.clear();
-		push_to_vector(root);
+
+		print_inOrder_c_child(root, output);
 	}
+
+	//void push_vector()
+	//{
+	//	name_list.clear();
+	//	count_list.clear();
+	//	push_to_vector(root);
+	//}
 
 	bool search_print(string name)
 	{
@@ -306,7 +566,7 @@ public:
 		return false;
 	}
 
-	bool search_plus(string name)
+	bool search_plus(string name, int pl)
 	{
 		Node *temp = root;
 
@@ -327,7 +587,7 @@ public:
 
 		if (temp->value == name)
 		{
-			temp->count++;
+			temp->count += pl;
 			return true;
 		}
 
@@ -384,7 +644,47 @@ public:
 };
 
 
+class Threaded_inOrder_itr
+{
+private:
+	Node *cur;
+	BST &t;
+
+public:
+	Threaded_inOrder_itr(BST &tree) : t(tree), cur(tree.root) {}
+
+	string *Next()
+	{
+		Node *tmp = cur->right;
+		if (!cur->right_thread)
+		{
+			while (!tmp->left_thread)
+			{
+				tmp = tmp->left;
+			}
+			cur = tmp;
+			if (cur == t.root)
+			{
+				return 0;
+			}
+			return &cur->value;
+		}
+	}
+
+	void inOrder()
+	{
+		for (string * val = Next(); val; val = Next())
+		{
+			cout << *val << endl << endl;
+		}
+	}
+
+};
+
+
+
 BST *word_tree = new BST();
+
 
 
 void gotoxy(int x, int y)
@@ -429,13 +729,21 @@ void init_tree_FILE()
 		{
 			if (!isalpha(tmp[i]))
 			{
-				tmp.erase(i , 1);
+				//tmp.erase(i , 1);
+				tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
+			}
+		}
+		for (int i = 0; i < tmp.size(); i++)
+		{
+			if (isdigit(tmp[i]))
+			{
+				tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
 			}
 		}
 
 		if (!tmp.empty())
 		{
-			if (!word_tree->search_plus(tmp))
+			if (!word_tree->search_plus(tmp, 1))
 			{
 				word_tree->add(tmp);
 			}
@@ -447,18 +755,20 @@ void init_tree_FILE()
 	system("pause>0");
 }
 
-void sort_by_counts()
+void sort_by_counts(ostream &output)
 {
-	word_tree->push_vector();
+	//word_tree->push_vector();
 
-	BST *tmp_tree = new BST();
+	//BST *tmp_tree = new BST();
 
-	for (int i = 0; i < name_list.size(); i++)
-	{
-		tmp_tree->add_by_count(name_list[i], count_list[i]);
-	}
+	//for (int i = 0; i < name_list.size(); i++)
+	//{
+	//	tmp_tree->add_by_count(name_list[i], count_list[i]);
+	//}
 
-	tmp_tree->print_name();
+	word_tree->iterate();
+
+	word_tree->print_count(output);
 }
 
 void read_FILE()
@@ -477,8 +787,10 @@ void read_FILE()
 	{
 		inputFile >> tmp >> tmp1;
 
-		word_tree->add_FILE(tmp, tmp1);
-
+		if (!word_tree->search_plus(tmp, tmp1))
+		{
+			word_tree->add_FILE(tmp, tmp1);
+		}
 	}
 	word_tree->deleteValue(tmp);
 	system("cls");
@@ -496,7 +808,8 @@ void Add_Word()
 	cout << "\n\n\tEnter your NEW Word:" << endl;
 	cout << "\t-> ";
 	cin >> tmp1;
-	if (!word_tree->search_plus(tmp1))
+	transform(tmp1.begin(), tmp1.end(), tmp1.begin(), ::tolower);
+	if (!word_tree->search_plus(tmp1, 1))
 	{
 		color(11);
 		cout << "\n\n\t\tYour NEW Word has been Added for the FIRST time!" << endl;
@@ -519,7 +832,7 @@ void Delete_Word()
 	cout << "\n\n\tEnter your NEW Word:" << endl;
 	cout << "\t-> ";
 	cin >> tmp1;
-
+	transform(tmp1.begin(), tmp1.end(), tmp1.begin(), ::tolower);
 	if (!word_tree->search_minus(tmp1))
 	{
 		color(10);
@@ -545,6 +858,7 @@ void Found_Word()
 	cout << "\n\n\tEnter your NEW Word:" << endl;
 	cout << "\t-> ";
 	cin >> tmp1;
+	transform(tmp1.begin(), tmp1.end(), tmp1.begin(), ::tolower);
 	color(11);
 	cout << "\n\n\t\tResult: ";
 	if (!word_tree->search_print(tmp1))
@@ -559,9 +873,17 @@ void Print_Name()
 {
 	system("cls");
 	color(10);
+	fstream output;
+	output.open("Sorted_by_Name.txt", ios::out);	//Make File
+	if (!output)
+	{
+		cerr << "File can not open." << endl;
+		exit(1);
+	}
 	cout << "\n\nTotal Of Unrepeated Words: " << word_tree->nodesCount() << "\n\n";
+	output << "\n\nTotal Of Unrepeated Words: " << word_tree->nodesCount() << "\n\n";
 	color(11);
-	word_tree->print_name();
+	word_tree->print_name(output);
 	system("pause>0");
 }
 
@@ -569,9 +891,17 @@ void Print_Count()
 {
 	system("cls");
 	color(10);
+	fstream output;
+	output.open("Sorted_by_Count.txt", ios::out);	//Make File
+	if (!output)
+	{
+		cerr << "File can not open." << endl;
+		exit(1);
+	}
 	cout << "\n\nTotal Of Unrepeated Words: " << word_tree->nodesCount() << "\n\n";
+	output << "\n\nTotal Of Unrepeated Words: " << word_tree->nodesCount() << "\n\n";
 	color(11);
-	sort_by_counts();
+	sort_by_counts(output);
 	system("pause>0");
 }
 
