@@ -42,8 +42,8 @@ struct Node {
 	}
 };
 
-//vector<string> name_list;
-//vector<int> count_list;
+vector<string> name_list;
+vector<int> count_list;
 void menu();
 
 class BST
@@ -212,21 +212,21 @@ private:
 		}
 	}
 
-	//void push_to_vector(Node *root)
-	//{
-	//	if (root != NULL)
-	//	{
-	//		name_list.push_back(root->value);
-	//		count_list.push_back(root->count);
+	void push_to_vector(Node *root)
+	{
+		if (root != NULL)
+		{
+			name_list.push_back(root->value);
+			count_list.push_back(root->count);
 
-	//		push_to_vector(root->left);
-	//		push_to_vector(root->right);
-	//	}
-	//	else
-	//	{
-	//		return;
-	//	}
-	//}
+			push_to_vector(root->left);
+			push_to_vector(root->right);
+		}
+		else
+		{
+			return;
+		}
+	}
 
 	void save_helper(Node *root, ostream &output)
 	{
@@ -531,12 +531,12 @@ public:
 		print_inOrder_c_child(root, output);
 	}
 
-	//void push_vector()
-	//{
-	//	name_list.clear();
-	//	count_list.clear();
-	//	push_to_vector(root);
-	//}
+	void push_vector()
+	{
+		name_list.clear();
+		count_list.clear();
+		push_to_vector(root);
+	}
 
 	bool search_print(string name)
 	{
@@ -720,22 +720,27 @@ void init_tree_FILE()
 	}
 
 	string tmp;
+	char b;
+	inputFile >> b;
 	while (!inputFile.eof())
 	{
 		inputFile >> tmp;
 		transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
 
+		//for (int i = 0; i < tmp.size(); i++)
+		//{
+		//	if (!isalpha(tmp[i]))
+		//	{
+		//		//tmp.erase(i , 1);
+		//		tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
+		//	}
+		//}
 		for (int i = 0; i < tmp.size(); i++)
 		{
-			if (!isalpha(tmp[i]))
-			{
-				//tmp.erase(i , 1);
-				tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
-			}
-		}
-		for (int i = 0; i < tmp.size(); i++)
-		{
-			if (isdigit(tmp[i]))
+			if (tmp[i] == '1' || tmp[i] == '2' || tmp[i] == '3' || tmp[i] == '4' || tmp[i] == '5' || tmp[i] == '6' || tmp[i] == '7' || tmp[i] == '8' || tmp[i] == '9' || tmp[i] == '0' ||
+				tmp[i] == '.' || tmp[i] == ',' || tmp[i] == ':' || tmp[i] == ';' || tmp[i] == '(' || tmp[i] == ')' || tmp[i] == '-' || tmp[i] == '_' || tmp[i] == '!' || tmp[i] == '?'
+				|| tmp[i] == '"' || tmp[i] == '@' || tmp[i] == '#' || tmp[i] == '&' || tmp[i] == '$' || tmp[i] == '^'
+				|| tmp[i] == '*' || tmp[i] == '+' || tmp[i] == '`' || tmp[i] == '/' || tmp[i] == b)
 			{
 				tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
 			}
@@ -755,20 +760,72 @@ void init_tree_FILE()
 	system("pause>0");
 }
 
+void init_persian_FILE()
+{
+	ifstream inputFile("persian.txt", ios::in | ios::beg);
+	if (!inputFile)	//check for file opening
+	{
+		cerr << "some thing wrong during opening file!" << endl;
+		_getche();
+		exit(1);
+	}
+
+	string tmp;
+	while (!inputFile.eof())
+	{
+		inputFile >> tmp;
+
+		for (int i = 0; i < tmp.size(); i++)
+		{
+			if (tmp[i] == '1' || tmp[i] == '2' || tmp[i] == '3' || tmp[i] == '4' || tmp[i] == '5' || tmp[i] == '6' || tmp[i] == '7' || tmp[i] == '8' || tmp[i] == '9' || tmp[i] == '0' ||
+				tmp[i] == '.' || tmp[i] == ',' || tmp[i] == ':' || tmp[i] == ';' || tmp[i] == '(' || tmp[i] == ')' || tmp[i] == '-' || tmp[i] == '_' || tmp[i] == '!' || tmp[i] == '?')
+			{
+				//tmp.erase(i , 1);
+				tmp.erase(remove(tmp.begin(), tmp.end(), tmp[i]), tmp.end());
+			}
+		}
+
+		//for (char& c : tmp) 
+		//{
+		//	if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '0' ||
+		//		c == '.' || c == ',' || c == ':' || c == ';' || c == '(' || c == ')' || c == '-' || c == '_' || c == '!' || c == '?')
+		//	{
+		//		c = NULL;
+		//	}
+		//}
+
+
+
+		if (!tmp.empty())
+		{
+			if (!word_tree->search_plus(tmp, 1))
+			{
+				word_tree->add(tmp);
+			}
+		}
+	}
+	system("cls");
+	color(11);
+	cout << "\n\n\n\t\t\tYour Tree has been set!";
+	system("pause>0");
+}
+
 void sort_by_counts(ostream &output)
 {
-	//word_tree->push_vector();
+	word_tree->push_vector();
 
-	//BST *tmp_tree = new BST();
+	BST *tmp_tree = new BST();
 
-	//for (int i = 0; i < name_list.size(); i++)
-	//{
-	//	tmp_tree->add_by_count(name_list[i], count_list[i]);
-	//}
+	for (int i = 0; i < name_list.size(); i++)
+	{
+		tmp_tree->add_by_count(name_list[i], count_list[i]);
+	}
 
-	word_tree->iterate();
+	//word_tree->iterate();
 
-	word_tree->print_count(output);
+	//word_tree->print_count(output);
+
+	tmp_tree->print_count(output);
 }
 
 void read_FILE()
@@ -1055,7 +1112,7 @@ void INIT_menu()
 			color(15);
 
 		gotoxy(28, 12);
-		cout << "Get Pragraph from SERVER";
+		cout << "Read PERSIAN Pragraph as FILE";
 
 		if (select == 3)
 			color(11);
@@ -1098,6 +1155,9 @@ void INIT_menu()
 			if (select == 2)
 			{
 				Loading();
+				init_persian_FILE();
+				word_tree->save_tree();
+				word_tree->display_in_FILE();
 				menu();
 			}
 			if (select == 3)
