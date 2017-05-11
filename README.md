@@ -1,15 +1,15 @@
 # Educational Projects of Sadjad University of Higher Technology Courses
 
-##*Advanced Programming*
+## *Advanced Programming*
 
-######*Store Managment System*
-######*Student Management System*
+###### *Store Managment System*
+###### *Student Management System*
 ----------------------------------------
-##*Data Structure*
+## *Data Structure*
 
-######*Family Tree*
-######*Paragraph Words Counter*
+###### *Family Tree*
+###### *Paragraph Words Counter*
 ----------------------------------------
-##*Operating System Lab*
+## *Operating System Lab*
 
-######*Custom_Shell_Command*
+###### *Custom_Shell_Command*
