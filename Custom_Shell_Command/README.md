@@ -1,14 +1,14 @@
 # Custom_Shell_Command
 The OS Lab Project that make new command in linux Shell.
 
-######You can listing your Directory container in custom mode.
+###### You can listing your Directory container in custom mode.
 This Script change behave of this command in bash:
 ```ls -l``` 
 
 
 It will get a character to showing custom list.
 
-######characters:
+###### characters:
 
 1. d = showing directories
 2. f = showing files
@@ -18,5 +18,5 @@ It will get a character to showing custom list.
 6. s = showing files and directories sorted acsending
 7. n = showing files and directories sorted decsending
 
-##How to use:
-######First you have to compile a C++ Source file, then run Script and enter your directory. Finally you can Edit  *"Script.sh"*  due to your need.
+## How to use:
+###### First you have to compile a C++ Source file, then run Script and enter your directory. Finally you can Edit  *"Script.sh"*  due to your need.
