@@ -1,4 +1,4 @@
-# Educational Projects of Sadjad University of Higher Technology Courses
+# Educational Projects of Sadjad University of Technology Courses
 
 ## *Fundamental of Programming*
 
@@ -17,3 +17,5 @@
 ## *Operating System Lab*
 
 ###### *Custom_Shell_Command*
+
+# License
