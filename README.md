@@ -19,3 +19,5 @@
 ###### *Custom_Shell_Command*
 
 # License
+MIT License
+Copyright (c) 2017 Ashkan Rahmani
