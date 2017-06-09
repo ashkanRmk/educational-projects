@@ -1,0 +1,224 @@
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:02 /sbin/init splash
+    2 ?        S      0:00 [kthreadd]
+    3 ?        S      0:00 [ksoftirqd/0]
+    5 ?        S<     0:00 [kworker/0:0H]
+    7 ?        S      0:09 [rcu_sched]
+    8 ?        S      0:00 [rcu_bh]
+    9 ?        S      0:00 [migration/0]
+   10 ?        S      0:00 [watchdog/0]
+   11 ?        S      0:00 [watchdog/1]
+   12 ?        S      0:00 [migration/1]
+   13 ?        S      0:00 [ksoftirqd/1]
+   15 ?        S<     0:00 [kworker/1:0H]
+   16 ?        S      0:00 [watchdog/2]
+   17 ?        S      0:00 [migration/2]
+   18 ?        S      0:00 [ksoftirqd/2]
+   20 ?        S<     0:00 [kworker/2:0H]
+   21 ?        S      0:00 [watchdog/3]
+   22 ?        S      0:00 [migration/3]
+   23 ?        S      0:00 [ksoftirqd/3]
+   25 ?        S<     0:00 [kworker/3:0H]
+   26 ?        S      0:00 [kdevtmpfs]
+   27 ?        S<     0:00 [netns]
+   28 ?        S<     0:00 [perf]
+   29 ?        S      0:00 [khungtaskd]
+   30 ?        S<     0:00 [writeback]
+   31 ?        SN     0:00 [ksmd]
+   32 ?        SN     0:00 [khugepaged]
+   33 ?        S<     0:00 [crypto]
+   34 ?        S<     0:00 [kintegrityd]
+   35 ?        S<     0:00 [bioset]
+   36 ?        S<     0:00 [kblockd]
+   37 ?        S<     0:00 [ata_sff]
+   38 ?        S<     0:00 [md]
+   39 ?        S<     0:00 [devfreq_wq]
+   46 ?        S      0:00 [kswapd0]
+   47 ?        S<     0:00 [vmstat]
+   48 ?        S      0:00 [fsnotify_mark]
+   49 ?        S      0:00 [ecryptfs-kthrea]
+   64 ?        S<     0:00 [kthrotld]
+   65 ?        S<     0:00 [acpi_thermal_pm]
+   68 ?        S<     0:00 [bioset]
+   69 ?        S<     0:00 [bioset]
+   70 ?        S<     0:00 [bioset]
+   71 ?        S<     0:00 [bioset]
+   72 ?        S<     0:00 [bioset]
+   73 ?        S<     0:00 [bioset]
+   74 ?        S<     0:00 [bioset]
+   75 ?        S<     0:00 [bioset]
+   76 ?        S<     0:00 [bioset]
+   77 ?        S<     0:00 [bioset]
+   78 ?        S<     0:00 [bioset]
+   79 ?        S<     0:00 [bioset]
+   80 ?        S<     0:00 [bioset]
+   81 ?        S<     0:00 [bioset]
+   82 ?        S<     0:00 [bioset]
+   83 ?        S<     0:00 [bioset]
+   84 ?        S<     0:00 [bioset]
+   85 ?        S<     0:00 [bioset]
+   86 ?        S<     0:00 [bioset]
+   87 ?        S<     0:00 [bioset]
+   88 ?        S<     0:00 [bioset]
+   89 ?        S<     0:00 [bioset]
+   90 ?        S<     0:00 [bioset]
+   91 ?        S<     0:00 [bioset]
+   95 ?        S<     0:00 [ipv6_addrconf]
+  109 ?        S<     0:00 [deferwq]
+  110 ?        S<     0:00 [charger_manager]
+  153 ?        S<     0:00 [kpsmoused]
+  154 ?        S      0:00 [scsi_eh_0]
+  155 ?        S<     0:00 [scsi_tmf_0]
+  158 ?        S      0:00 [scsi_eh_1]
+  159 ?        S<     0:00 [scsi_tmf_1]
+  160 ?        S      0:00 [scsi_eh_2]
+  161 ?        S<     0:00 [scsi_tmf_2]
+  162 ?        S      0:00 [scsi_eh_3]
+  163 ?        S<     0:00 [scsi_tmf_3]
+  164 ?        S      0:00 [scsi_eh_4]
+  165 ?        S<     0:00 [scsi_tmf_4]
+  166 ?        S      0:00 [scsi_eh_5]
+  167 ?        S<     0:00 [scsi_tmf_5]
+  174 ?        S<     0:00 [ttm_swap]
+  175 ?        S<     0:00 [bioset]
+  176 ?        S<     0:00 [bioset]
+  180 ?        S<     0:00 [kworker/2:1H]
+  261 ?        S<     0:00 [bioset]
+  285 ?        S<     0:00 [kworker/1:1H]
+  287 ?        S      0:00 [jbd2/sda7-8]
+  288 ?        S<     0:00 [ext4-rsv-conver]
+  337 ?        S      0:00 [kauditd]
+  352 ?        Ss     0:00 /lib/systemd/systemd-journald
+  370 ?        Ss     0:00 /sbin/lvmetad -f
+  376 ?        Ss     0:01 /lib/systemd/systemd-udevd
+  417 ?        S<     0:00 [loop0]
+  421 ?        S<     0:00 [loop1]
+  426 ?        S<     0:00 [loop2]
+  437 ?        S<     0:00 [loop3]
+  448 ?        S<     0:00 [loop4]
+  458 ?        S<     0:00 [loop5]
+  521 ?        S<     0:00 [kworker/3:1H]
+  555 ?        S<     0:00 [cfg80211]
+  585 ?        S      0:18 [irq/31-iwlwifi]
+  662 ?        S<     0:00 [iwlwifi]
+  667 ?        S<     0:00 [kvm-irqfd-clean]
+  724 ?        S<     0:00 [kworker/0:1H]
+  760 ?        S<     0:00 [kworker/u17:1]
+  846 ?        S<     0:00 [kmemstick]
+  847 ?        S      0:00 [rtsx_usb_ms_1]
+  881 ?        Ss     0:00 /usr/sbin/cron -f
+  884 ?        Ssl    0:00 /usr/lib/accountsservice/accounts-daemon
+  886 ?        Ss     0:00 /lib/systemd/systemd-logind
+  893 ?        Ss     0:00 /usr/lib/bluetooth/bluetoothd
+  913 ?        Ssl    0:00 /usr/sbin/ModemManager
+  917 ?        Ssl    0:00 /usr/sbin/thermald --no-daemon --dbus-enable
+  919 ?        Ss     0:00 /sbin/cgmanager -m name=systemd
+  922 ?        Ss     0:01 avahi-daemon: running [smn-Lenovo-IdeaPad-Z500.local]
+  942 ?        Ssl    0:00 /usr/sbin/rsyslogd -n
+  952 ?        Ss     0:00 /usr/sbin/acpid
+  962 ?        Ss     0:02 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ 1141 ?        S      0:00 avahi-daemon: chroot helper
+ 1260 ?        Ssl    0:00 /usr/sbin/cups-browsed
+ 1262 ?        Ssl    0:05 /usr/sbin/NetworkManager --no-daemon
+ 1318 ?        Ss     0:00 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+ 1401 ?        Ss     0:00 /usr/bin/polipo -c /etc/polipo/config pidFile=/var/run/polipo/polipo.pid daemonise=true
+ 1409 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+ 1424 ?        Ssl    0:00 /usr/lib/snapd/snapd
+ 1604 tty1     Ss+    0:00 /sbin/agetty --noclear tty1 linux
+ 1605 ?        Ss     0:00 /usr/sbin/mdm --nodaemon
+ 1635 ?        Ss     0:06 /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0
+ 1639 ?        Sl     0:00 /usr/bin/obfs4proxy
+ 1640 ?        S      0:00 /usr/sbin/mdm --nodaemon
+ 1647 tty8     Ssl+   2:17 /usr/lib/xorg/Xorg :0 -audit 0 -auth /var/lib/mdm/:0.Xauth -nolisten tcp vt8
+ 1650 ?        Ss     0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+ 1675 ?        S      0:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+ 1987 ?        S      0:00 dbus-launch --autolaunch=2a5d5f96ef9147c0b35535562b32d0ff --binary-syntax --close-stderr
+ 1989 ?        Ss     0:00 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+ 2032 ?        S<     0:00 [ktpacpid]
+ 2108 ?        Ss     0:00 /lib/systemd/systemd --user
+ 2111 ?        S      0:00 (sd-pam)
+ 2118 ?        SLl    0:01 /usr/bin/gnome-keyring-daemon --daemonize --login
+ 2123 ?        Ssl    0:00 /usr/sbin/console-kit-daemon --no-daemon
+ 2197 ?        Ssl    0:00 cinnamon-session --session cinnamon
+ 2267 ?        Ss     0:00 /usr/bin/gpg-agent --daemon
+ 2270 ?        Ss     0:00 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch cinnamon-session-cinnamon
+ 2273 ?        S      0:00 /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch cinnamon-session-cinnamon
+ 2274 ?        Ss     0:00 /usr/bin/dbus-daemon --fork --print-pid 6 --print-address 9 --session
+ 2286 ?        Sl     0:00 /usr/lib/gvfs/gvfsd
+ 2291 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+ 2301 ?        Sl     0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+ 2306 ?        S      0:00 /usr/bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+ 2308 ?        Sl     0:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+ 2316 ?        Sl     0:02 /usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/cinnamon-settings-daemon
+ 2334 ?        S<l    0:00 /usr/bin/pulseaudio --start --log-target=syslog
+ 2335 ?        SNsl   0:00 /usr/lib/rtkit/rtkit-daemon
+ 2340 ?        Ssl    0:00 /usr/lib/upower/upowerd
+ 2348 ?        S<     0:00 [krfcommd]
+ 2374 ?        Sl     0:00 /usr/lib/dconf/dconf-service
+ 2378 ?        Sl     0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+ 2381 ?        Ssl    0:01 /usr/lib/udisks2/udisksd --no-debug
+ 2390 ?        Sl     0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+ 2395 ?        Sl     0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+ 2400 ?        Sl     0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+ 2405 ?        Sl     0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+ 2410 ?        Ssl    0:00 /usr/lib/colord/colord
+ 2411 ?        S      0:00 /usr/bin/python2 /usr/bin/cinnamon-launcher
+ 2413 ?        S      0:00 syndaemon -i 1.0 -t -K -R
+ 2415 ?        Sl     0:00 /usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-printer
+ 2428 ?        Sl     4:41 cinnamon --replace
+ 2436 ?        S      0:00 /usr/bin/python /usr/bin/blueberry-tray
+ 2437 ?        Sl     0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+ 2439 ?        Sl     0:15 nemo -n
+ 2440 ?        Sl     0:03 nm-applet
+ 2443 ?        S      0:00 sh -c /usr/lib/blueberry/blueberry-tray.py
+ 2444 ?        Sl     0:00 python2 /usr/lib/blueberry/blueberry-tray.py
+ 2445 ?        Sl     0:00 /usr/bin/python2 /usr/bin/cinnamon-killer-daemon
+ 2448 ?        Sl     0:02 /usr/bin/python /usr/bin/glipper
+ 2458 ?        S      0:00 /usr/sbin/rfkill event
+ 2479 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-metadata
+ 2484 ?        S      0:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+ 2491 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.1 /org/gtk/gvfs/exec_spaw/0
+ 2559 ?        Sl     0:06 cinnamon-screensaver
+ 2560 ?        S      0:00 /usr/bin/python3 /usr/bin/mintupdate-launcher
+ 2565 ?        S      0:00 sh -c /usr/lib/linuxmint/mintUpdate/mintUpdate.py
+ 2566 ?        Sl     0:00 /usr/bin/python3 /usr/lib/linuxmint/mintUpdate/mintUpdate.py
+ 2630 ?        Ss     0:01 /sbin/mount.ntfs /dev/sda6 /media/smn/4420375020374866 -o rw,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2
+ 2633 ?        Sl     0:00 /usr/bin/python3 /usr/share/system-config-printer/applet.py
+ 2643 ?        Ss     0:00 /sbin/mount.ntfs /dev/sda3 /media/smn/4CF6C28DF6C276AC -o rw,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2
+ 2652 ?        Ss     0:00 /sbin/mount.ntfs /dev/sda5 /media/smn/BBAE39274DA17F2C -o rw,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2
+ 3347 ?        SLs    0:00 /usr/sbin/dnscrypt-proxy --resolver-name=cisco
+ 6962 ?        S      0:01 [kworker/u16:55]
+ 7014 ?        S      0:00 [irq/30-mei_me]
+ 7015 ?        S<     0:00 [hci0]
+ 7016 ?        S<     0:00 [hci0]
+ 7017 ?        S<     0:00 [kworker/u17:2]
+ 7260 ?        S      0:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-wlp3s0.pid -lf /var/lib/NetworkManager/dhclient-43a7ff67-02e7-485a-88cb-1419209e7602-wlp3s0.lease -cf /var/lib/NetworkManager/dhclient-wlp3s0.conf wlp3s0
+ 7589 ?        Ss     0:00 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 108:114
+ 7756 ?        Sl     3:32 /home/smn/Telegram/Telegram -- %u
+ 7918 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-http --spawner :1.1 /org/gtk/gvfs/exec_spaw/1
+ 8072 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-network --spawner :1.1 /org/gtk/gvfs/exec_spaw/2
+ 8098 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-dnssd --spawner :1.1 /org/gtk/gvfs/exec_spaw/6
+ 9168 ?        Sl     0:02 /usr/lib/gnome-terminal/gnome-terminal-server
+ 9172 pts/0    Ss     0:00 bash
+ 9576 ?        S      0:00 [kworker/2:0]
+ 9659 ?        S      0:00 [kworker/0:1]
+ 9665 ?        S      0:00 [kworker/1:1]
+ 9897 ?        S      0:00 [kworker/1:0]
+ 9935 ?        S      0:00 [kworker/3:2]
+ 9950 ?        S      0:00 [kworker/u16:2]
+ 9974 ?        S      0:00 [kworker/3:1]
+ 9982 ?        S      0:00 [kworker/0:2]
+ 9993 ?        S      0:00 [kworker/2:2]
+10013 ?        S      0:00 [kworker/u16:1]
+10035 ?        S      0:00 [kworker/3:0]
+10050 ?        S      0:00 [kworker/0:0]
+10051 ?        S      0:00 [kworker/0:3]
+10052 ?        S      0:00 [kworker/0:4]
+10053 ?        S      0:00 [kworker/0:5]
+10054 ?        S      0:00 [kworker/0:6]
+10055 ?        S      0:00 [kworker/1:2]
+10192 ?        Sl     0:01 /opt/sublime_text/sublime_text /home/smn/os_lab/script (copy).sh
+10203 ?        Sl     0:00 /opt/sublime_text/plugin_host 10192
+10237 ?        S      0:00 [kworker/u16:0]
+10250 pts/0    S+     0:00 bash
+10251 pts/0    R+     0:00 ps ax
