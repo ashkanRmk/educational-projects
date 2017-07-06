@@ -1,20 +1,20 @@
-# Educational Projects of Sadjad University of Technology Courses
+# Educational Projects of Sadjad University of Technology Courses 
 
-## *Fundamental of Programming*
+## :collision: *Fundamental of Programming*
 
 ###### *Library Management System*
 ----------------------------------------
-## *Advanced Programming*
+## :collision: *Advanced Programming*
 
 ###### *Store Managment System*
 ###### *Student Management System*
 ----------------------------------------
-## *Data Structure*
+## :collision: *Data Structure*
 
 ###### *Family Tree*
 ###### *Paragraph Words Counter*
 ----------------------------------------
-## *Operating System Lab*
+## :collision: *Operating System Lab*
 
 ###### *Custom_Shell_Command*
 
