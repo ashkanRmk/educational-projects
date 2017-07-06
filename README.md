@@ -1,4 +1,4 @@
-# Educational Projects of Sadjad University of Technology Courses 
+# Educational Projects of Sadjad University of Technology Courses :books:
 
 ## :collision: *Fundamental of Programming*
 
