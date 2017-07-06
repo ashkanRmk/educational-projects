@@ -18,6 +18,7 @@
 
 ###### *Custom_Shell_Command*
 
-# License
+# :exclamation: License
 MIT License
 Copyright (c) 2017 Ashkan Rahmani
+You can use these codes without `limitation`. You can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Codes But **The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.**
