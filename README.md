@@ -6,17 +6,17 @@
 ----------------------------------------
 ## :collision: *Advanced Programming*
 
-###### *Store Managment System*
-###### *Student Management System*
+###### :star2: *Store Managment System*
+###### :star2: *Student Management System*
 ----------------------------------------
 ## :collision: *Data Structure*
 
-###### *Family Tree*
-###### *Paragraph Words Counter*
+###### :star2: *Family Tree*
+###### :star2: *Paragraph Words Counter*
 ----------------------------------------
 ## :collision: *Operating System Lab*
 
-###### *Custom_Shell_Command*
+###### :star2: *Custom_Shell_Command*
 
 # :exclamation: License
 MIT License
