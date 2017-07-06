@@ -2,7 +2,7 @@
 
 ## :collision: *Fundamental of Programming*
 
-###### *Library Management System*
+###### :star2: *Library Management System*
 ----------------------------------------
 ## :collision: *Advanced Programming*
 
