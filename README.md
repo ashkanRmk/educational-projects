@@ -1,4 +1,4 @@
-[Logo](http://ashkanam.ir/blog/wp-content/uploads/2018/01/Logo2.png)
+![Logo](http://ashkanam.ir/blog/wp-content/uploads/2018/01/Logo2.png)
 
 # Educational Projects of Sadjad University of Technology Courses :books:
 
