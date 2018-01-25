@@ -27,7 +27,7 @@
 ###### :star2: *Roman numerals to Integer and Vise versa*
 
 # :exclamation: License
-MIT License
+CC License
 
 Copyright (c) 2017 Ashkan Rahmani
 
