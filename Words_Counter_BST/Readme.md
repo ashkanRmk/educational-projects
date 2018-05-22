@@ -1,4 +1,4 @@
-#Paragraph Words Counter
+# Paragraph Words Counter
 
 Input Your Paragraph into *TEXTS.txt* file and run the code.
 This Program will Analyze your Text and Count words.
@@ -13,4 +13,4 @@ This Program will Analyze your Text and Count words.
 
 5) Common Operation on BST
 
-######For more info Read *Help.pdf* :D
+###### For more info Read *Help.pdf* :D
