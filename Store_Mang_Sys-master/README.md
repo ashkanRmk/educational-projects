@@ -14,4 +14,4 @@ Initial budget = 5000 (It's Changeble)
 
 4- Displays the number of goods sold and goods available to the user.
 
-5- Calculating and displaying the profits from the sale of goods. 
+5- Calculating and displaying the profits from the sale of goods
