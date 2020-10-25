@@ -1,7 +1,6 @@
 //GradeBook.cpp
 //Student Managment System V 1.0
 //Advanced Programming (Midterm_Project)
-//PersianStudent.ir
 
 #include"GradeBook.h"
 
