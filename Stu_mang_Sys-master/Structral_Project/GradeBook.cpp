@@ -54,7 +54,6 @@ bool list::makeFile()
     return true;
 }
 
-//PersianStudent.ir
 bool list::makeFile1()
 {
     Node *temp = first;
@@ -224,7 +223,6 @@ bool list::showStuInfo_FILE()
     return true;
 }
 
-//PersianStudent.ir
 bool list::showStuInfo_LinkedList()
 {
     if (!first)
