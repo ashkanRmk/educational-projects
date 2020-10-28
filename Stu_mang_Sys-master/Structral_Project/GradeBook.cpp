@@ -1,7 +1,6 @@
 //GradeBook.cpp
 //Student Managment System V 1.0
 //Advanced Programming (Midterm_Project)
-//PersianStudent.ir
 
 #include"GradeBook.h"
 
@@ -55,7 +54,6 @@ bool list::makeFile()
     return true;
 }
 
-//PersianStudent.ir
 bool list::makeFile1()
 {
     Node *temp = first;
@@ -225,7 +223,6 @@ bool list::showStuInfo_FILE()
     return true;
 }
 
-//PersianStudent.ir
 bool list::showStuInfo_LinkedList()
 {
     if (!first)
