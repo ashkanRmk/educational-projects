@@ -10,21 +10,21 @@
 ----------------------------------------
 ## :collision: *Advanced Programming*
 
-###### :star2: *Store Managment System*
-###### :star2: *Student Management System*
+###### :star2: [*Store Managment System*](./Store_Mang_Sys-master/)
+###### :star2: [*Student Management System*](./Stu_mang_Sys-master/)
 ----------------------------------------
 ## :collision: *Data Structure*
 
-###### :star2: *Family Tree*
-###### :star2: *Paragraph Words Counter*
+###### :star2: [*Family Tree*](./Family_Tree-Educational-Project/)
+###### :star2: [*Paragraph Words Counter*](./Words_Counter_BST/)
 ----------------------------------------
 ## :collision: *Operating System Lab*
 
-###### :star2: *Custom_Shell_Command*
+###### :star2: [*Custom_Shell_Command*](./Custom_Shell_Command/)
 ----------------------------------------
 ## :collision: *Principle of Compiler*
 
-###### :star2: *Roman numerals to Integer and Vise versa*
+###### :star2: [*Roman numerals to Integer and Vise versa*](./Roman%20to%20integer/)
 
 # :exclamation: License
 CC License
