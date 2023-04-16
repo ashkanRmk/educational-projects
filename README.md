@@ -6,7 +6,7 @@
 
 ## :collision: *Fundamental of Programming*
 
-###### :star2: *Library Management System*
+###### :star2: [*Library Management System*](./Library_mng/)
 ----------------------------------------
 ## :collision: *Advanced Programming*
 
